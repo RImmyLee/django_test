@@ -1,0 +1,12 @@
+<!-- templates/search.html -->
+<h1>Search Results</h1>
+
+<ul>
+    {% for test_data in object_list %}
+        {% if test_data.기사 %}
+            <a href="{{ test_data.기사 }}">{{ test_data.정책제목 }}</a>
+        {% else %}
+            <p>{{ test_data.정책제목 }}</p>
+        {% endif %}
+    {% endfor %}
+</ul>
