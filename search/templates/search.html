@@ -4,9 +4,9 @@
 <ul>
     {% for article_data in object_list %}
         {% if article_data.기사_url %}
-            <a href="{{ article_data.기사_url }}">{{ article_data.기사제목 }}</a>
+            <a href="{{ article_data.기사_url }}">{{ article_data.기사제목|linebreaks }}</a>
         {% else %}
-            <p>{{ article_data.기사제목 }}</p>
+            <a>{{ article_data.기사제목 }}</a>
         {% endif %}
     {% endfor %}
 </ul>
