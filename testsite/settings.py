@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'testsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'test_db.sqlite3',
+        'NAME': BASE_DIR / 'popo_db.sqlite3',
     }
 }
 
