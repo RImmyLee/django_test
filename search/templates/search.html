@@ -1,12 +1,8 @@
 <!-- templates/search.html -->
-<h1>Search Results</h1>
+<h1>유사 정책 검색 결과</h1>
 
 <ul>
-    {% for article_data in object_list %}
-        {% if article_data.기사_url %}
-            <a href="{{ article_data.기사_url }}">{{ article_data.기사제목|linebreaks }}</a>
-        {% else %}
-            <a>{{ article_data.기사제목 }}</a>
-        {% endif %}
+    {% for politic_data in object_list %}
+        <a href="../visualized/{{ politic_data.정책_index }}">{{ politic_data.정책설명|linebreaks }}</a>
     {% endfor %}
 </ul>

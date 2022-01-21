@@ -1,7 +1,18 @@
 <!-- templates/index.html -->
-<h1>Coogle</h1>
+<h1>PoPo</h1>
 
 <!-- Search Form -->
-<form action = "{% url 'search' %}" method = 'get'>
-    <input name = 'q' type = 'text' placeholder = 'Search...'>
-</form>
+<div style='text-align: center;'>
+    <form action = "{% url 'search' %}" method = 'get'>
+        <input name = 'q' type = 'text' placeholder = 'Search...'>
+    </form>
+</div>
+
+<div style='text-align: center;'>
+    <legend>
+        <pre>[작성예시]</pre>
+        <pre>인구가 줄어들고 있는데, 어떻게 할지 모르겠다</pre>
+        <pre>4차산업, 미래사회 대비 청소년교육정책은 어떻게 해야할까요?</pre>
+        <pre>메이커스페이스 공간을 구성하려는데, 실제 운영사례는 어떻게 알 수 있나요?</pre>
+    </legend>
+</div>

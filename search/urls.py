@@ -2,9 +2,16 @@
 
 from django.urls import path
 
-from .views import homeView, searchView
+from .views import visualizedView, homeView, searchView
 
 urlpatterns = [
     path('search/', searchView.as_view(), name = 'search'),
     path('', homeView.as_view(), name = 'index'),
+    path('visualized/<int:number>', visualizedView.as_view(), name = 'visualized')
 ]
+
+#urlpatterns = [
+#    path('index/', searchView.as_view(), name = 'search'),
+#    path('politics/', ~~~~, name = 'politics'),
+#    path('visualized/', ~~~~, name = 'visualized'),
+#]

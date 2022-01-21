@@ -1,0 +1,12 @@
+<!-- templates/visualized.html -->
+<h1>관련 기사</h1>
+
+<ul>
+    {% for article_data in object_list %}
+        {% if article_data.기사_url %}
+            <a href="{{ article_data.기사_url }}">{{ article_data.기사제목|linebreaks }}</a>
+        {% else %}
+            <a>{{ article_data.기사제목 }}</a>
+        {% endif %}
+    {% endfor %}
+</ul>
