@@ -1,12 +1,45 @@
+{% load static %}
 <!-- templates/visualized.html -->
-<h1>관련 기사</h1>
 
-<ul>
-    {% for article_data in object_list %}
-        {% if article_data.기사_url %}
-            <a href="{{ article_data.기사_url }}">{{ article_data.기사제목|linebreaks }}</a>
-        {% else %}
-            <a>{{ article_data.기사제목 }}</a>
-        {% endif %}
-    {% endfor %}
-</ul>
+<h1>
+    <a href="/">PoPo</a>
+</h1>
+
+<html>
+    <head>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+    </head>
+    <body class="bg-white">
+        <table class="table table-striped">
+            <thead>
+                {% if object_list %}
+                    <tr>
+                        <td>
+                            <h2>정책 관련 기사의 수는 {{ object_list|length }}개 입니다.</h2>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            <h2>관련 기사가 없습니다.</h2>
+                        </td>
+                    </tr>
+                {% endif %}
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for article_data in object_list %}
+                        {% if article_data.기사_url %}
+                            <tr>
+                                <td>
+                                    <a href="{{ article_data.기사_url }}">{{ article_data.기사제목|linebreaks }}</a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </body>
+</html>

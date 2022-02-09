@@ -1,8 +1,55 @@
+{% load static %}
 <!-- templates/search.html -->
-<h1>유사 정책 검색 결과</h1>
 
-<ul>
-    {% for politic_data in object_list %}
-        <a href="../visualized/{{ politic_data.정책_index }}">{{ politic_data.정책설명|linebreaks }}</a>
-    {% endfor %}
-</ul>
+<h1>
+    <a href="/">PoPo</a> 
+</h1>
+
+<html>
+    <head>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+    </head>
+    <body class="bg-white">
+        <table class="table table-striped">
+            <thead>
+                {% if object_list %}
+                    <tr>
+                        <td colspan="5">
+                            <h2>유사 정책의 수는 {{ object_list|length }}개 입니다.</h2>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">
+                            <h2>유사 정책이 없습니다.</h2>
+                        </td>
+                    </tr>
+                {% endif %}
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for politic_data in object_list %}
+                        <tr>
+                            <td>
+                                {{politic_data.지역명}}
+                            </td>
+                            <td>
+                                {{politic_data.지역구명}}
+                            </td>
+                            <td>
+                                {{politic_data.정당명}}
+                            </td>
+                            <td>
+                                {{politic_data.의원명}}
+                            </td>
+                            <td>
+                                <a href="../visualized/{{ politic_data.정책_index }}">{{ politic_data.정책설명|linebreaks }}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </body>
+</html>

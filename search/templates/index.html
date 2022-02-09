@@ -1,18 +1,46 @@
+{% load static %}
 <!-- templates/index.html -->
-<h1>PoPo</h1>
 
-<!-- Search Form -->
-<div style='text-align: center;'>
-    <form action = "{% url 'search' %}" method = 'get'>
-        <input name = 'q' type = 'text' placeholder = 'Search...'>
-    </form>
-</div>
+<h1>
+  <a href="/">PoPo</a>
+</h1>
 
-<div style='text-align: center;'>
-    <legend>
-        <pre>[작성예시]</pre>
-        <pre>인구가 줄어들고 있는데, 어떻게 할지 모르겠다</pre>
-        <pre>4차산업, 미래사회 대비 청소년교육정책은 어떻게 해야할까요?</pre>
-        <pre>메이커스페이스 공간을 구성하려는데, 실제 운영사례는 어떻게 알 수 있나요?</pre>
-    </legend>
-</div>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="s130">
+      <form action="{% url 'search' %}" method='get'>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <div class="svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+              </svg>
+            </div>
+            <input name='q' type="text" placeholder="사례를 입력하세요." />
+          </div>
+          <div class="input-field second-wrap">
+            <button class="btn-search" type="submit">검색</button>
+          </div>
+        </div>
+        <h3>
+          <span class="info">인구가 줄어들고 있는데, 어떻게 할지 모르겠다</span>
+        </h3>
+        <h3>
+          <span class="info">4차산업, 미래사회 대비 청소년교육정책은 어떻게 해야할까요?</span>
+        </h3>
+        <h3>
+          <span class="info">메이커스페이스 공간을 구성하려는데, 실제 운영사례는 어떻게 알 수 있나요?</span>
+        </h3>
+      </form>
+    </div>
+    <script src="{% static 'js/extention/choices.js' %}"></script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
