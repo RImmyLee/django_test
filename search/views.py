@@ -28,7 +28,7 @@ class searchView(ListView):
             object_list = PoliticData.objects.filter(
                 Q(분류 = json_list[0]['label'])
             )
-            
+
             return object_list
         except requests.exceptions.RequestException:
             print('HTTP Request failed')

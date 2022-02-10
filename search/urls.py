@@ -9,9 +9,3 @@ urlpatterns = [
     path('', homeView.as_view(), name = 'index'),
     path('visualized/<int:number>', visualizedView.as_view(), name = 'visualized')
 ]
-
-#urlpatterns = [
-#    path('index/', searchView.as_view(), name = 'search'),
-#    path('politics/', ~~~~, name = 'politics'),
-#    path('visualized/', ~~~~, name = 'visualized'),
-#]
